@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+		<title> Calculator </title>
+		<style>
+		#button input{
+				color:black;
+				width:75px;
+				align:center;
+				height:81px;
+				font-size:34px;
+				font-weight:bold;
+				border:solid;
+				margin:0px 1px 2px 3px;
+					
+				
+			}	
+		#form{
+				background-color:black;
+				width:330px;
+				height:397px;
+				border:solid;
+				padding:34px;
+			  }
+		.hover input:hover{
+				background-color:cadetblue !important;
+				}
+		
+			
+				
+		</style>
+</head>
+
+<body>
+	
+<div style="margin:0px 0px 0px 490px">
+	<h1> Calculator </h1>
+	
+		<form id="form">
+	<input id="xyz" style="width:318px;height:51px;margin:0px 0px 6px 3px;border:solid;"type="text" name="">
+	
+<div id="button" class="hover">
+
+	<div>
+	
+		<input id="seven" type="button" value= "7" onclick="display7()">
+		<input id="eight" type="button" value= 8 onclick="display8()">
+		<input id="nine" type="button" value="9" onclick="display9()">
+		<input id="plus" type="button" value="+" onclick="displayplus()">
+		
+	</div>
+	<div>
+		
+		<input id="four" type="button" value="4" onclick="display4()">
+		<input id="five" type="button" value="5" onclick="display5()">
+		<input id="six" type="button" value="6" onclick="display6()">
+		<input id="minus" type="button" value="-" onclick="displayminus()">
+	
+	</div>
+	<div>
+		
+		<input id="one" type="button" value="1" onclick="display1()">
+		<input id="two" type="button" value="2" onclick="display2()">
+		<input id="three" type="button" value="3" onclick="display3()">
+		<input id="mul" type="button" value="*" onclick="displaymul()">
+		
+	</div>
+	<div>
+		
+		<input id="zero" type="button" value="0" onclick="display0()">
+		<input style="color:black;background-color:red" type="button" value="c" onclick="displayclear()">
+		<input id="equal" type="button" value="=" onclick="displayequal()">
+		<input id="divide" type="button" value="/" onclick="displaydivide()">
+		</form>
+	</div>
+</div>
+</div>
+</form>
+	
+
+</body>
+<script>
+function display7() {
+				var z = document.getElementById("seven").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display8() {
+				var z = document.getElementById("eight").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display9() {
+				var z = document.getElementById("nine").value;
+				document.getElementById("xyz").value +=z;
+				}
+function displayplus() {
+				var z = document.getElementById("plus").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display4() {
+				var z = document.getElementById("four").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display5() {
+				var z = document.getElementById("five").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display6() {
+				var z = document.getElementById("six").value;
+				document.getElementById("xyz").value +=z;
+				}
+function displayminus() {
+				var z = document.getElementById("minus").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display1() {
+				var z = document.getElementById("one").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display2() {
+				var z = document.getElementById("two").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display3() {
+				var z = document.getElementById("three").value;
+				document.getElementById("xyz").value +=z;
+				}
+function displaymul() {
+				var z = document.getElementById("mul").value;
+				document.getElementById("xyz").value +=z;
+				}
+function display0() {
+				var z = document.getElementById("zero").value;
+				document.getElementById("xyz").value +=z;
+				}
+function displayclear() {
+				document.getElementById("xyz").value ="";
+				}
+function displaydivide() {
+				var z = document.getElementById("divide").value;
+				document.getElementById("xyz").value +=z;
+				}
+function displayequal() {
+				var x = document.getElementById("xyz").value;
+				var y = eval(x);
+				document.getElementById("xyz").value=y;
+				}
+
+
+
+				
+	</script>
+</html>
