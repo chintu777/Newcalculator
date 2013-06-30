@@ -14,6 +14,18 @@
 					
 				
 			}	
+		#button1 input{
+				color:black;
+				width:75px;
+				align:center;
+				height:81px;
+				font-size:34px;
+				font-weight:bold;
+				border:solid;
+				margin:0px 1px 2px 3px;
+					
+				
+			}	
 		#form{
 				background-color:black;
 				width:330px;
@@ -32,44 +44,89 @@
 
 <body>
 	
-<div style="margin:0px 0px 0px 490px">
+<div style="margin:0px 0px 0px 0px">
 	<h1> Calculator </h1>
 	
 		<form id="form">
-	<input id="xyz" style="width:318px;height:51px;margin:0px 0px 6px 3px;border:solid;"type="text" name="">
+	<input class="xyz" style="width:318px;height:51px;margin:0px 0px 6px 3px;border:solid;"type="text" name="">
 	
 <div id="button" class="hover">
 
 	<div>
 	
-		<input id="seven" type="button" value= "7" onclick="display7()">
-		<input id="eight" type="button" value= 8 onclick="display8()">
-		<input id="nine" type="button" value="9" onclick="display9()">
-		<input id="plus" type="button" value="+" onclick="displayplus()">
+		<input id="seven" type="button" value= "7">
+		<input id="eight" type="button" value= "8">
+		<input id="nine" type="button" value="9">
+		<input id="plus" type="button" value="+">
 		
 	</div>
 	<div>
 		
-		<input id="four" type="button" value="4" onclick="display4()">
-		<input id="five" type="button" value="5" onclick="display5()">
-		<input id="six" type="button" value="6" onclick="display6()">
-		<input id="minus" type="button" value="-" onclick="displayminus()">
+		<input id="four" type="button" value="4">
+		<input id="five" type="button" value="5">
+		<input id="six" type="button" value="6">
+		<input id="minus" type="button" value="-">
 	
 	</div>
 	<div>
 		
-		<input id="one" type="button" value="1" onclick="display1()">
-		<input id="two" type="button" value="2" onclick="display2()">
-		<input id="three" type="button" value="3" onclick="display3()">
-		<input id="mul" type="button" value="*" onclick="displaymul()">
+		<input id="one" type="button" value="1">
+		<input id="two" type="button" value="2">
+		<input id="three" type="button" value="3">
+		<input id="mul" type="button" value="*">
 		
 	</div>
 	<div>
 		
-		<input id="zero" type="button" value="0" onclick="display0()">
-		<input style="color:black;background-color:red" type="button" value="c" onclick="displayclear()">
-		<input id="equal" type="button" value="=" onclick="displayequal()">
-		<input id="divide" type="button" value="/" onclick="displaydivide()">
+		<input id="zero" type="button" value="0">
+		<input style="color:black;background-color:red" type="button" value="c">
+		<input id="equal" type="button" value="=">
+		<input id="divide" type="button" value="/">
+		</form>
+	</div>
+</div>
+</div>
+</form>
+
+
+<div style="margin:0px 0px 0px 490px">
+	<h1> Calculator </h1>
+	
+		<form id="form">
+	<input class="xyz" style="width:318px;height:51px;margin:0px 0px 6px 3px;border:solid;"type="text" name="">
+	
+<div id="button1" class="hover">
+
+	<div>
+	
+		<input id="seven" type="button" value= "7">
+		<input id="eight" type="button" value= "8">
+		<input id="nine" type="button" value="9">
+		<input id="plus" type="button" value="+">
+		
+	</div>
+	<div>
+		
+		<input id="four" type="button" value="4">
+		<input id="five" type="button" value="5">
+		<input id="six" type="button" value="6">
+		<input id="minus" type="button" value="-">
+	
+	</div>
+	<div>
+		
+		<input id="one" type="button" value="1">
+		<input id="two" type="button" value="2">
+		<input id="three" type="button" value="3">
+		<input id="mul" type="button" value="*">
+		
+	</div>
+	<div>
+		
+		<input id="zero" type="button" value="0">
+		<input style="color:black;background-color:red" type="button" value="c">
+		<input id="equal" type="button" value="=">
+		<input id="divide" type="button" value="/">
 		</form>
 	</div>
 </div>
@@ -79,70 +136,217 @@
 
 </body>
 <script>
-function display7() {
-				var z = document.getElementById("seven").value;
-				document.getElementById("xyz").value +=z;
+function calculator(id){
+var modulenode=document.getElementById(id);
+var textbox=moduleNode.getElementsByClassName("xyz") [0];
+	calc = function(e) {
+        val = e.target.value;
+        if (e.target.type != "button") {
+            return;
+        }
+        if (val != "=") {
+            textBox.value += val;
+        } else {
+            textBox.value = eval(textBox.value)
+        }
+    }
+
+    moduleNode.onclick = calc;
+/*function f1(e) {
+	var b = e.target.value;
+	if(b=="c") 
+	{
+	document.getElementById("xyz").value ="";
+	}
+	else if (b=="=")
+	{
+	document.getElementById("xyz").value =eval(b);
+	}
+	else
+	{
+	document.getElementById("xyz").value +=b;
+	}
+}	
+
+
+/*var seven = document.getElementById("seven");
+	if (seven.addEventListener) {
+			seven.addEventListener('click',display7,false);
+			}
+			else if(seven.attachEvent){
+				seven.attachEvent('onclick',display7());
 				}
+
+function display7() {
+				document.getElementById("xyz").value +=7;
+				}
+var eight = document.getElementById("eight");
+	if (eight.addEventListener) {
+			eight.addEventListener('click',display8,false);
+			}
+			else if(eight.attachEvent){
+				eight.attachEvent('onclick',display8());
+				}
+		
 function display8() {
-				var z = document.getElementById("eight").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=8;
+				}
+				
+var nine = document.getElementById("nine");
+	if (nine.addEventListener) {
+			nine.addEventListener('click',display9,false);
+			}
+			else if(nine.attachEvent){
+				nine.attachEvent('onclick',display9());
 				}
 function display9() {
-				var z = document.getElementById("nine").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=9;
+				}
+				
+var plus = document.getElementById("plus");
+	if (plus.addEventListener) {
+			plus.addEventListener('click',displayplus,false);
+			}
+			else if(plus.attachEvent){
+				plus.attachEvent('onclick',displayplus());
 				}
 function displayplus() {
-				var z = document.getElementById("plus").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +="+";
+				}
+				
+var four = document.getElementById("four");
+	if (four.addEventListener) {
+			four.addEventListener('click',display4,false);
+			}
+			else if(four.attachEvent){
+				four.attachEvent('onclick',display4());
 				}
 function display4() {
-				var z = document.getElementById("four").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=4;
+				}
+				
+var five = document.getElementById("five");
+	if (five.addEventListener) {
+			five.addEventListener('click',display5,false);
+			}
+			else if(five.attachEvent){
+				five.attachEvent('onclick',display5());
 				}
 function display5() {
-				var z = document.getElementById("five").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=5;
+				}
+				
+var six = document.getElementById("six");
+	if (six.addEventListener) {
+			six.addEventListener('click',display6,false);
+			}
+			else if(six.attachEvent){
+				six.attachEvent('onclick',display6());
 				}
 function display6() {
-				var z = document.getElementById("six").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=6;
+				}
+				
+var minus = document.getElementById("minus");
+	if (minus.addEventListener) {
+			minus.addEventListener('click',displayminus,false);
+			}
+			else if(minus.attachEvent){
+				minus.attachEvent('onclick',displayminus());
 				}
 function displayminus() {
-				var z = document.getElementById("minus").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +="-";
+				}
+				
+var one = document.getElementById("one");
+	if (one.addEventListener) {
+			one.addEventListener('click',display1,false);
+			}
+			else if(one.attachEvent){
+				one.attachEvent('onclick',display1());
 				}
 function display1() {
-				var z = document.getElementById("one").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=1;
+				}
+				
+var two = document.getElementById("two");
+	if (two.addEventListener) {
+			two.addEventListener('click',display2,false);
+			}
+			else if(two.attachEvent){
+				two.attachEvent('onclick',display2());
 				}
 function display2() {
-				var z = document.getElementById("two").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=2;
+				}
+				
+var three = document.getElementById("three");
+	if (three.addEventListener) {
+			three.addEventListener('click',display3,false);
+			}
+			else if(three.attachEvent){
+				three.attachEvent('onclick',display3());
 				}
 function display3() {
-				var z = document.getElementById("three").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=3;
+				}
+				
+var mul = document.getElementById("mul");
+	if (mul.addEventListener) {
+			mul.addEventListener('click',displaymul,false);
+			}
+			else if(mul.attachEvent){
+				mul.attachEvent('onclick',displaymul());
 				}
 function displaymul() {
-				var z = document.getElementById("mul").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +="*";
+				}
+				
+var zero = document.getElementById("zero");
+	if (zero.addEventListener) {
+			zero.addEventListener('click',display0,false);
+			}
+			else if(zero.attachEvent){
+				zero.attachEvent('onclick',display0());
 				}
 function display0() {
-				var z = document.getElementById("zero").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +=0;
+				}
+				
+var clear = document.getElementById("clear");
+	if (clear.addEventListener) {
+			clear.addEventListener('click',displayclear,false);
+			}
+			else if(clear.attachEvent){
+				clear.attachEvent('onclick',displayclear());
 				}
 function displayclear() {
 				document.getElementById("xyz").value ="";
 				}
+				
+var divide = document.getElementById("divide");
+	if (divide.addEventListener) {
+			divide.addEventListener('click',displaydivide,false);
+			}
+			else if(divide.attachEvent){
+				divide.attachEvent('onclick',displaydivide());
+				}
 function displaydivide() {
-				var z = document.getElementById("divide").value;
-				document.getElementById("xyz").value +=z;
+				document.getElementById("xyz").value +="/";
+				}
+				
+var equal = document.getElementById("equal");
+	if (equal.addEventListener) {
+			equal.addEventListener('click',displayequal,false);
+			}
+			else if(equal.attachEvent){
+				equal.attachEvent('onclick',displayequal());
 				}
 function displayequal() {
 				var x = document.getElementById("xyz").value;
 				var y = eval(x);
 				document.getElementById("xyz").value=y;
-				}
+				} */
 
 
 
